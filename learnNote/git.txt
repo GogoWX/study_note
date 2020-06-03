@@ -1,0 +1,8 @@
+git学习笔记
+
+1、git 安装与初始设置
+设置名字：git config --global user.name "" 
+设置邮箱：git config --global user.email ""
+2、创建及初始化仓库
+新建文件：mkdir 文件名 
+初始化仓库：git init
