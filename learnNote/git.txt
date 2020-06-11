@@ -11,3 +11,4 @@ git学习笔记
 推送至仓库：git commit -m (-m 为提交的详情介绍)
 查看仓库当前状态：git status
 查看文件修改：git diff 文件名
+查看提交日志：git log
