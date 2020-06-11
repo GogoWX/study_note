@@ -10,9 +10,11 @@ git学习笔记
 推送至缓存区：git add 文件名
 推送至仓库：git commit (-m 提交的详情介绍)
 查看仓库当前状态：git status
+查看文件内容：cat 文件名
 查看文件修改：git diff 文件名
-查看提交版本日志：git log （--pretty=oneline 只显示简要信息）
-测试退回
+查看版本库列表：git log （--pretty=oneline 只显示简要信息）
+查看版本库操作列表：git reflog
+回退版本：git reset --hard HEAD^：回退至上一版本；HEAD~10：回退10个版本；3f57版本id前几位：回退至指定id版本
 在服务端更新代码时，git pull时总是出现需要编辑一个commit message，git status 查看了下，原来是服务端有部分代码需要commit后尚未push导致。
 
 这种问题，解决办法如下：
@@ -21,4 +23,3 @@ git学习笔记
 如需要修改，键盘输入i或a进入vi编辑模式，鼠标移动到第一行编辑默认的commit message合并备注，编辑后按esc进入vi命令模式，输入:wq退出即可
 如不需要修改，直接esc进入vi命令模式，:q退出编辑，使用默认合并备注
 如果不想每次pull时都出现这个编辑界面，push你本地的commit内容即可
-
