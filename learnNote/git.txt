@@ -7,6 +7,7 @@ git学习笔记
 新建文件：mkdir 文件名 
 初始化仓库：git init
 查看当前路径：pwd
+展开文件：ls
 3、时光穿梭机
 推送至缓存区：git add 文件名
 推送至仓库：git commit (-m 提交的详情介绍)
