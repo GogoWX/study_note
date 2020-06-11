@@ -24,6 +24,7 @@ git学习笔记
 4、远程仓库
 创建链接GitHub 的SSH Key： ssh-keygen -t rsa -C "youremail@example.com" （windows用户主目录下，生成公私钥，将公钥放置在GitHub上）
 关联本地仓库与github仓库：git remote add origin https://github.com/GogoWX/study_note.git
+从远程仓库克隆一个本地库：git clone https://github.com/GogoWX/study_note.git
 推送本地库内容至远程库：git push -u origin master （-u为首次为将本地与远程端的master关联用，之后的推送可和拉取可省略）
 
 
