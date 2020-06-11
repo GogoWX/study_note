@@ -12,9 +12,12 @@ git学习笔记
 查看仓库当前状态：git status
 查看文件内容：cat 文件名
 查看文件修改：git diff 文件名
+查看工作区与版本库最新一版的区别：git diff HEAD -- 文件名
 查看版本库列表：git log （--pretty=oneline 只显示简要信息）
 查看版本库操作列表：git reflog
 回退版本：git reset --hard HEAD^：回退至上一版本；HEAD~10：回退10个版本；3f57版本id前几位：回退至指定id版本
+
+
 在服务端更新代码时，git pull时总是出现需要编辑一个commit message，git status 查看了下，原来是服务端有部分代码需要commit后尚未push导致。
 
 这种问题，解决办法如下：
