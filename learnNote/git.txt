@@ -7,6 +7,7 @@ git学习笔记
 新建文件：mkdir 文件名 
 初始化仓库：git init
 查看当前路径：pwd
+3、时光穿梭机
 推送至缓存区：git add 文件名
 推送至仓库：git commit (-m 提交的详情介绍)
 查看仓库当前状态：git status
@@ -20,6 +21,7 @@ git学习笔记
 撤销暂存区的修改：git reset HEAD 文件名
 删除文件：rm 文件名
 确认从版本库删除文件：git rm 文件名 => git commit    误删还原 git checkout -- 文件名
+4、远程仓库
 创建链接GitHub 的SSH Key： ssh-keygen -t rsa -C "youremail@example.com" （windows用户主目录下，生成公私钥，将公钥放置在GitHub上）
 关联本地仓库与github仓库：git remote add origin https://github.com/GogoWX/study_note.git
 推送本地库内容至远程库：git push -u origin master （-u为首次为将本地与远程端的master关联用，之后的推送可和拉取可省略）
