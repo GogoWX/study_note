@@ -11,8 +11,8 @@ git学习笔记
 推送至仓库：git commit (-m 提交的详情介绍)
 查看仓库当前状态：git status
 查看文件修改：git diff 文件名
-查看提交日志：git log （--pretty=oneline 只显示简要信息）
-
+查看提交版本日志：git log （--pretty=oneline 只显示简要信息）
+测试退回
 在服务端更新代码时，git pull时总是出现需要编辑一个commit message，git status 查看了下，原来是服务端有部分代码需要commit后尚未push导致。
 
 这种问题，解决办法如下：
