@@ -16,7 +16,8 @@ git学习笔记
 查看版本库列表：git log （--pretty=oneline 只显示简要信息）
 查看版本库操作列表：git reflog
 回退版本：git reset --hard HEAD^：回退至上一版本；HEAD~10：回退10个版本；3f57版本id前几位：回退至指定id版本
-
+清除工作区的修改：git checkout -- 文件名
+撤销暂存区的修改：git reset HEAD 文件名
 
 在服务端更新代码时，git pull时总是出现需要编辑一个commit message，git status 查看了下，原来是服务端有部分代码需要commit后尚未push导致。
 
