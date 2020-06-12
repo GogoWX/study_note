@@ -33,6 +33,7 @@ git学习笔记
 切换分支：git checkout 分支名 或者 git switch 分支名（未成功）
 创建+切换分支：git checkout -b 分支名 或者 git switch -c 分支名
 合并某分支到当前分支：git merge 分支名 
+合并分支留痕，禁用Fast forward：git merge --no-ff -m "merge with no-ff" 分支名
 删除分支：git branch -d 分支名
 合并分支冲突后，修改重新add、commit恢复
 
