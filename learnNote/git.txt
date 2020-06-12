@@ -27,7 +27,13 @@ git学习笔记
 关联本地仓库与github仓库：git remote add origin https://github.com/GogoWX/study_note.git
 从远程仓库克隆一个本地库：git clone https://github.com/GogoWX/study_note.git
 推送本地库内容至远程库：git push -u origin master （-u为首次为将本地与远程端的master关联用，之后的推送可和拉取可省略）
-
+5、分支管理
+查看分支：git branch
+创建分支：git branch 文件名
+切换分支：git checkout 分支名 或者 git switch 分支名（未成功）
+创建+切换分支：git checkout -b 分支名 或者 git switch -c 分支名
+合并某分支到当前分支：git merge 分支名 
+删除分支：git branch -d 分支名
 
 在服务端更新代码时，git pull时总是出现需要编辑一个commit message，git status 查看了下，原来是服务端有部分代码需要commit后尚未push导致。
 
