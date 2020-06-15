@@ -44,6 +44,7 @@ git学习笔记
 复制一个特定的提交到当前分支：git cherry-pick 提交版本号commit
 强制删除一个未被合并的分支：git branch -D 分支名
 查看远程仓库信息：git remote -v（-v为详情）
+拉取远程仓库代码：git pull
 
 在服务端更新代码时，git pull时总是出现需要编辑一个commit message，git status 查看了下，原来是服务端有部分代码需要commit后尚未push导致。
 
