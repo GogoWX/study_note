@@ -48,6 +48,11 @@ git学习笔记
 关联本地分支与远程分支：git branch --set-upstream 分支名 origin/分支名
 拉取远程仓库代码：git pull
 整理提交历史为一条直线（变基）：rebase
+查看所有标签：git tag 
+设置最近一次提交标签：git tag v1.0 （v1.0标签名）
+设置某一指定提交的标签：git tag v0.9 f52c633 （f52c633 版本号）
+查看某一标签信息：git show v1.0
+设置带说明的标签：git tag -a v1.0 -m "version 1 released" 1094adb（-a指定标签名，-m指定说明文字）
 
 在服务端更新代码时，git pull时总是出现需要编辑一个commit message，git status 查看了下，原来是服务端有部分代码需要commit后尚未push导致。
 
