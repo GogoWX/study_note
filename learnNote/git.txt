@@ -15,7 +15,7 @@ git学习笔记
 查看文件内容：cat 文件名
 查看文件修改：git diff 文件名
 查看工作区与版本库最新一版的区别：git diff HEAD -- 文件名
-查看版本库列表：git log （--pretty=oneline 只显示简要信息）
+查看版本库列表：git log （--pretty=oneline 只显示简要信息 --abbrev-commit）
 查看版本库操作列表：git reflog
 回退版本：git reset --hard HEAD^：回退至上一版本；HEAD~10：回退10个版本；3f57版本id前几位：回退至指定id版本
 清除工作区的修改：git checkout -- 文件名
@@ -24,6 +24,8 @@ git学习笔记
 确认从版本库删除文件：git rm 文件名 => git commit    误删还原 git checkout -- 文件名
 4、远程仓库
 创建链接GitHub 的SSH Key： ssh-keygen -t rsa -C "youremail@example.com" （windows用户主目录下，生成公私钥，将公钥放置在GitHub上）
+查看远程仓库信息：git remote -v（-v为详情）
+删除已有的远程库：git remote rm origin
 关联本地仓库与github仓库：git remote add origin https://github.com/GogoWX/study_note.git
 从远程仓库克隆一个本地库：git clone https://github.com/GogoWX/study_note.git
 推送本地库内容至远程库：git push -u origin master （-u为首次为将本地与远程端的master关联用，之后的推送可和拉取可省略,master为分支名称）
@@ -43,11 +45,20 @@ git学习笔记
 恢复并删除储存代码：git stash pop
 复制一个特定的提交到当前分支：git cherry-pick 提交版本号commit
 强制删除一个未被合并的分支：git branch -D 分支名
-查看远程仓库信息：git remote -v（-v为详情）
 创建本地和远程对应分支：git checkout -b 分支名 origin/分支名
 关联本地分支与远程分支：git branch --set-upstream 分支名 origin/分支名
 拉取远程仓库代码：git pull
 整理提交历史为一条直线（变基）：rebase
+6、标签管理
+查看所有标签：git tag 
+设置最近一次提交标签：git tag v1.0 （v1.0标签名）
+设置某一指定提交的标签：git tag v0.9 f52c633 （f52c633 版本号）
+查看某一标签信息：git show v1.0
+设置带说明的标签：git tag -a v1.0 -m "version 1 released" 1094adb（-a指定标签名，-m指定说明文字）
+推送本地标签至远程：git push origin 标签名
+提送全部标签至远程：git push origin --tags
+删除一个本地标签：git tag -d 标签名
+删除一个远程标签：git push origin :refs/tags/标签名
 
 在服务端更新代码时，git pull时总是出现需要编辑一个commit message，git status 查看了下，原来是服务端有部分代码需要commit后尚未push导致。
 
