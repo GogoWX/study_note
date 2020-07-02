@@ -4,9 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='application' content='test'><!--元数据-所属应用名称-->
+    <meta name='author' content='Ethan'><!--元数据-作者名字-->
+    <meta name='description' content='This is a test/case page'><!--元数据-当前页面描述-->
+    <meta name='keywords' content=''><!--元数据-当前页面描述-->
+    <meta name="robots" content="noindex"><!--搜索引擎处理方式：noindex - 不要索引此页面 noarchive - 不要创建此页面的存档或缓存版本 nofollow - 不要追踪（即抓取）此页面的链接-->
+    <meta http-equiv='refresh' content='5'><!--规定每五秒重新加载页面，5;http://www.demo.com格式会在五秒后跳转页面-->
     <base href="../data/"><!-- 设置默认链接地址 -->
     <title>Document</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <style>
+        section {
+            width: 100%;
+            padding: 20px 0;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .flex-jc-sa {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
         .bd-f4 {
             border-color: #f4f4f4;
         }
@@ -29,7 +51,7 @@
         </form>
     </section>
     <!-- 预设的输入选项结束 -->
-    <hr />
+
     <!-- 表格开始 -->
     <section>
         <table class="bd-f4" border="1px" cellspacing='0' cellpadding='10' align='center'>
@@ -193,6 +215,30 @@
         </table>
     </section>
     <!-- 表格结束 -->
+
+    <!-- 音视频开始 -->
+    <section class="flex-jc-sa">
+        <div>
+            <video width="320" height="240" controls autoplay>
+                <source src="movie.ogg" type="video/ogg">使用head中的base默认地址拼接
+                <source src="movie.mp4" type="video/mp4">
+                <source src="movie.webm" type="video/webm">
+                <object data="movie.mp4" width="320" height="240">
+                    <embed width="320" height="240" src="movie.swf">
+                </object>
+            </video>
+        </div>
+        <div>
+            <audio controls height="100" width="100">
+                <source src="horse.mp3" type="audio/mpeg">
+                <source src="horse.ogg" type="audio/ogg">
+                <object data="horse.mp3" width="320" height="240">
+                    <embed height="50" width="100" src="horse.mp3">
+                </object>
+            </audio>
+        </div>
+    </section>
+    <!-- 音视频结束 -->
 </body>
 
 </html>
