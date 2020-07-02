@@ -13,6 +13,12 @@
     <base href="../data/"><!-- 设置默认链接地址 -->
     <title>Document</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="../js/case.js" defer></script><!--外联脚本属性 defer：延迟加载，在html加载完成后加载；async：异步加载，html解析与脚本加载同时进行，可以异步地执行不与HTML文档中的元素交互的自包含脚本，不适用于依赖于由其他脚本定义的函数或值的脚本。-->
+    <noscript>
+        <h1>Javascript is required!</h1>
+        <p>You  cannot use  this page  without Javascript</p>
+        <meta http-equiv="refresh"  content="3; http://www.w3cschool.cn"/><!--如不支持脚本，3秒后跳转至其他页面-->
+    </noscript>
     <style>
         section {
             width: 100%;
