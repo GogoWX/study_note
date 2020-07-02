@@ -4,20 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name='application' content='test'><!--元数据-所属应用名称-->
-    <meta name='author' content='Ethan'><!--元数据-作者名字-->
-    <meta name='description' content='This is a test/case page'><!--元数据-当前页面描述-->
-    <meta name='keywords' content=''><!--元数据-当前页面描述-->
-    <meta name="robots" content="noindex"><!--搜索引擎处理方式：noindex - 不要索引此页面 noarchive - 不要创建此页面的存档或缓存版本 nofollow - 不要追踪（即抓取）此页面的链接-->
-    <meta http-equiv='refresh' content='5'><!--规定每五秒重新加载页面，5;http://www.demo.com格式会在五秒后跳转页面-->
+    <meta name='application' content='test'>
+    <!--元数据-所属应用名称-->
+    <meta name='author' content='Ethan'>
+    <!--元数据-作者名字-->
+    <meta name='description' content='This is a test/case page'>
+    <!--元数据-当前页面描述-->
+    <meta name='keywords' content=''>
+    <!--元数据-当前页面描述-->
+    <meta name="robots" content="noindex">
+    <!--搜索引擎处理方式：noindex - 不要索引此页面 noarchive - 不要创建此页面的存档或缓存版本 nofollow - 不要追踪（即抓取）此页面的链接-->
+    <meta http-equiv='refresh' content='5'>
+    <!--规定每五秒重新加载页面，5;http://www.demo.com格式会在五秒后跳转页面-->
     <base href="../data/"><!-- 设置默认链接地址 -->
     <title>Document</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <script src="../js/case.js" defer></script><!--外联脚本属性 defer：延迟加载，在html加载完成后加载；async：异步加载，html解析与脚本加载同时进行，可以异步地执行不与HTML文档中的元素交互的自包含脚本，不适用于依赖于由其他脚本定义的函数或值的脚本。-->
+    <script src="../js/case.js" defer></script>
+    <!--外联脚本属性 defer：延迟加载，在html加载完成后加载；async：异步加载，html解析与脚本加载同时进行，可以异步地执行不与HTML文档中的元素交互的自包含脚本，不适用于依赖于由其他脚本定义的函数或值的脚本。-->
     <noscript>
         <h1>Javascript is required!</h1>
-        <p>You  cannot use  this page  without Javascript</p>
-        <meta http-equiv="refresh"  content="3; http://www.w3cschool.cn"/><!--如不支持脚本，3秒后跳转至其他页面-->
+        <p>You cannot use this page without Javascript</p>
+        <meta http-equiv="refresh" content="3; https://github.com/GogoWX" />
+        <!--如不支持脚本，3秒后跳转至其他页面-->
     </noscript>
     <style>
         section {
@@ -42,9 +50,35 @@
 </head>
 
 <body>
+    <!--超链接页面在iframe中显示开始-->
+    <section>
+        <iframe name="iframe_a"></iframe><!--src属性可指定显示内容的地址-->
+        <p><a href="https://www.w3cschool.cn/" target="iframe_a">W3Cschool</a></p>
+    </section>
+    <!--超链接页面在iframe中显示结束-->
+    <!--引用块内容开始-->
+    <section>
+        <blockquote cite="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">
+            Cascading Style Sheets (CSS) is a style sheet language used for
+            describing the look and formatting of a document written in a markup language.
+        </blockquote>
+    </section>
+    <!--引用块内容结束-->
+    <!--预格式化开始，pre标签会保留标签内内容的格式-->
+    <section>
+        <pre>
+            <code>
+                var  fruits = ["XML",  "HTML", "CSS", "Java"];
+                for (var i = 0; i < fruits.length; i++) {
+                    document.writeln("I like  "  + fruits[i]);
+                }
+            </code>
+        </pre>
+    </section>
+    <!-- 预格式化结束 -->
     <!-- 预设的输入选项开始 -->
     <section>
-        <form action="#javascript" method="get">
+        <form action=" #javascript" method="get">
             <input list="browsers" name="browser">
             <datalist id="browsers">
                 <option value="Internet Explorer">
