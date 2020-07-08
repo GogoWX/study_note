@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: application / x-httpd-php');
+header('Content-Type: text/event-stream');
 header('Catch-control: no-catch');
 $time = date('r');
 echo 'data: The server time is: {$time}nn';
