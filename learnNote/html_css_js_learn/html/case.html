@@ -14,19 +14,18 @@
     <!--元数据-当前页面描述-->
     <meta name="robots" content="noindex">
     <!--搜索引擎处理方式：noindex - 不要索引此页面 noarchive - 不要创建此页面的存档或缓存版本 nofollow - 不要追踪（即抓取）此页面的链接-->
-    <meta http-equiv='refresh' content='5'>
+    <!-- <meta http-equiv='refresh' content='5'> -->
     <!--规定每五秒重新加载页面，5;http://www.demo.com格式会在五秒后跳转页面-->
     <base href="../data/"><!-- 设置默认链接地址 -->
     <title>Document</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <script src="../js/case.js" defer></script>
-    <!--外联脚本属性 defer：延迟加载，在html加载完成后加载；async：异步加载，html解析与脚本加载同时进行，可以异步地执行不与HTML文档中的元素交互的自包含脚本，不适用于依赖于由其他脚本定义的函数或值的脚本。-->
-    <noscript>
-        <h1>Javascript is required!</h1>
-        <p>You cannot use this page without Javascript</p>
-        <meta http-equiv="refresh" content="3; https://github.com/GogoWX" />
-        <!--如不支持脚本，3秒后跳转至其他页面-->
-    </noscript>
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- ie9以下支持html5，国外、国内二选一 -->
+    <!--[if lt IE 9]>
+        <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <![endif]-->
     <style>
         section,
         header {
@@ -47,7 +46,25 @@
         .bd-f4 {
             border-color: #f4f4f4;
         }
+
+        #div1,
+        #div2 {
+            float: left;
+            width: 100px;
+            height: 35px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
     </style>
+    <script src="../js/case.js" defer></script>
+    <!--外联脚本属性 defer：延迟加载，在html加载完成后加载；async：异步加载，html解析与脚本加载同时进行，可以异步地执行不与HTML文档中的元素交互的自包含脚本，不适用于依赖于由其他脚本定义的函数或值的脚本。-->
+    <noscript>
+        <h1>Javascript is required!</h1>
+        <p>You cannot use this page without Javascript</p>
+        <meta http-equiv="refresh" content="3; https://github.com/GogoWX" />
+        <!--如不支持脚本，3秒后跳转至其他页面-->
+    </noscript>
 </head>
 
 <body>
@@ -57,6 +74,72 @@
         </address>
     </header>
     <section>
+        <!-- sse 服务器发送事件(无需请求，自动刷新)开始 -->
+        <section>
+            <h1>服务器时间：</h1>
+            <div id="sseResult"></div>
+            <script>
+                if(typeof(EventSource) !== 'undefined') {
+                    var source = new EventSource('../php/demo_sse.php')
+                    source.onmessage=function(event) {
+                        document.getElementById("sseResult").innerHTML=event.data;
+                    }
+                } else {
+                    document.getElementById("sseResult").innerHTML="抱歉，你的浏览器不支持 server-sent 事件...";
+                }
+            </script>
+        </section>
+        <!-- sse 服务器发送事件(无需请求，自动刷新)结束 -->
+        <!-- html5 worker 开始 -->
+        <section>
+            <p>计数：<output id='result'>0</output></p>
+            <button onclick="startWorker()">开始工作</button>
+            <button onclick="stopWorker()">停止工作</button>
+            <script>
+                var w = undefined;
+
+                function startWorker() {
+                    if (typeof (Worker) !== 'undefined') {
+                        if (w == undefined) {
+                            w = new Worker('../js/demo_worker.js');
+                        }
+                        w.onmessage = function (event) {
+                            document.getElementById('result').innerHTML = event.data;
+                        }
+                    } else {
+                        document.getElementById('result').innerHTML = "抱歉，你的浏览器不支持 Web Workers...";
+                    }
+                }
+
+                function stopWorker() {
+                    w.terminate();
+                    w = undefined;
+                }
+            </script>
+        </section>
+        <!-- html5 worker 结束 -->
+        <!-- html5拖动开始 -->
+        <section class="flex-jc-sa">
+            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <img src="logo.png" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31"></div>
+            <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <script>
+                function allowDrop(ev) {
+                    ev.preventDefault();
+                }
+
+                function drag(ev) {
+                    ev.dataTransfer.setData("Text", ev.target.id);
+                }
+
+                function drop(ev) {
+                    ev.preventDefault();
+                    var data = ev.dataTransfer.getData("Text");
+                    ev.target.appendChild(document.getElementById(data));
+                }
+            </script>
+        </section>
+        <!-- html5拖动结束 -->
         <!-- 格式化标签开始 -->
         <section>
             <p>The <abbr title="Cascading Style Sheets">CSS</abbr> is a style sheet language used for describing the
