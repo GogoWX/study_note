@@ -78,10 +78,10 @@
         <section>
             <h1>服务器时间：</h1>
             <div id="sseResult"></div>
-            <script type="text/event-stream">
-                if(typeof(EventSource) !== 'undefined') {
+            <script>
+                if(typeof (EventSource) !== 'undefined') {
                     var source = new EventSource('../php/demo_sse.php')
-                    source.onmessage=function(event) {
+                    source.onmessage = function (event) {
                         document.getElementById("sseResult").innerHTML=event.data;
                     }
                 } else {
