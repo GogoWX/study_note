@@ -56,6 +56,10 @@
             padding: 10px;
             border: 1px solid #aaaaaa;
         }
+
+        .text-a-r {
+            text-align: right;
+        }
     </style>
     <script src="../js/case.js" defer></script>
     <!--外联脚本属性 defer：延迟加载，在html加载完成后加载；async：异步加载，html解析与脚本加载同时进行，可以异步地执行不与HTML文档中的元素交互的自包含脚本，不适用于依赖于由其他脚本定义的函数或值的脚本。-->
@@ -113,7 +117,7 @@
 
                 function stopWorker() {
                     w.terminate();
-                    w = undefined;
+                    // w = undefined;
                 }
             </script>
         </section>
@@ -164,8 +168,8 @@
         <!--引用块内容开始-->
         <section>
             <blockquote cite="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">
-                Cascading Style Sheets (CSS) is a style sheet language used for
-                describing the look and formatting of a document written in a markup language.
+                <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the look and formatting of a document written in a markup language.</p>
+                <p class="text-a-r"><cite>—— http://en.wikipedia.org/wiki/Cascading_Style_Sheets</cite></p>
             </blockquote>
         </section>
         <!--引用块内容结束-->
@@ -365,7 +369,8 @@
         <section class="flex-jc-sa">
             <div>
                 <video width="320" height="240" controls autoplay>
-                    <source src="movie.ogg" type="video/ogg">使用head中的base默认地址拼接
+                    <source src="movie.ogg" type="video/ogg">
+                    <!-- 使用head中的base默认地址拼接 -->
                     <source src="movie.mp4" type="video/mp4">
                     <source src="movie.webm" type="video/webm">
                     <object data="movie.mp4" width="320" height="240">
