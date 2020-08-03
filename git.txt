@@ -46,7 +46,7 @@ git学习笔记
 复制一个特定的提交到当前分支：git cherry-pick 提交版本号commit
 强制删除一个未被合并的分支：git branch -D 分支名
 创建本地和远程对应分支：git checkout -b 分支名 origin/分支名
-关联本地分支与远程分支：git branch --set-upstream 分支名 origin/分支名
+关联本地分支与远程分支：git branch --set-upstream-to(或者--track) 分支名 origin/分支名
 拉取远程仓库代码：git pull
 整理提交历史为一条直线（变基）：rebase
 6、标签管理
