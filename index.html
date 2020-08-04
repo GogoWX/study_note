@@ -35,6 +35,26 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            box-sizing: border-box;
+        }
+
+        .bgi {
+            padding: 20px;
+            background-image: url('/data/bgi_paper.gif');
+            background-repeat: repeat;
+            -webkit-background-origin: content-box;
+            background-origin: content-box;
+        }
+
+        .bg-clip {
+            border: 5px dotted black;
+            padding: 20px;
+            background: yellow;
+            background-clip: padding-box;
+        }
+
+        .section-box {
+            padding: 0;
         }
 
         .flex-jc-sa {
@@ -77,19 +97,19 @@
             Questions and comments? <a href="mailto:wangxu5277@163.com">Email me</a>
         </address>
     </header>
-    <section>
+    <section class="section-box">
         <!-- sse 服务器发送事件(无需请求，自动刷新)开始 -->
-        <section>
+        <section class="bgi">
             <h1>服务器时间：</h1>
             <div id="sseResult"></div>
             <script>
-                if(typeof (EventSource) !== 'undefined') {
+                if (typeof (EventSource) !== 'undefined') {
                     var source = new EventSource('/php/index.php')
                     source.onmessage = function (event) {
-                        document.getElementById("sseResult").innerHTML=event.data;
+                        document.getElementById("sseResult").innerHTML = event.data;
                     }
                 } else {
-                    document.getElementById("sseResult").innerHTML="抱歉，你的浏览器不支持 server-sent 事件...";
+                    document.getElementById("sseResult").innerHTML = "抱歉，你的浏览器不支持 server-sent 事件...";
                 }
             </script>
         </section>
@@ -168,7 +188,8 @@
         <!--引用块内容开始-->
         <section>
             <blockquote cite="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">
-                <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the look and formatting of a document written in a markup language.</p>
+                <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the look and formatting of
+                    a document written in a markup language.</p>
                 <p class="text-a-r"><cite>—— http://en.wikipedia.org/wiki/Cascading_Style_Sheets</cite></p>
             </blockquote>
         </section>
@@ -366,7 +387,7 @@
         <!-- 表格结束 -->
 
         <!-- 音视频开始 -->
-        <section class="flex-jc-sa">
+        <section class="flex-jc-sa bg-clip">
             <div>
                 <video width="320" height="240" controls autoplay>
                     <source src="movie.ogg" type="video/ogg">
